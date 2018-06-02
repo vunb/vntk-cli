@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/vntk/vntk-cli#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "lodash": "^4.17.10",
     "vntk": "^1.4.1"
   }
 }

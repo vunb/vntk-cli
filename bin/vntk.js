@@ -5,8 +5,8 @@ const _ = require('lodash')
 const chalk = require('chalk')
 const program = require('commander')
 const version = require('../package').version
-const tokenizer = require('../src/vntk/tokenizer')
-const wordTokenizer = require('../src/vntk/tokenizer/word_tokenizer')
+const tokenize = require('../src/vntk/tokenizer/tokenize')
+const word_tokenize = require('../src/vntk/tokenizer/word_tokenize')
 
 var NOOP = function () {};
 var help = function () {
@@ -54,7 +54,7 @@ program
     .description('Break text into arrays of tokens')
     .alias('tok')
     .action(function (files, opts) {
-        tokenizer.tokenize(files, opts).then((result) => {
+        tokenize(files, opts).then((result) => {
             console.log(`
             $ vntk tokenize success!
                 input: ${chalk.green(result.input)}            
@@ -89,7 +89,7 @@ program
     .description('Break text into arrays of tokens')
     .alias('ws')
     .action(function (files, opts) {
-        wordTokenizer.tokenize(files, opts).then((result) => {
+        word_tokenize(files, opts).then((result) => {
             console.log(`
             $ vntk word tokenize success!
                 input: ${chalk.green(result.input)}            

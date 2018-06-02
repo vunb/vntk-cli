@@ -25,6 +25,14 @@ module.exports = function fromDir(startPath, filter, callback) {
         filter = new RegExp(`.${filter}$`);
     }
 
+    // check if input is a file
+    var statFile = fs.lstatSync(startPath);
+    if (!statFile.isDirectory()) {
+        logger.debug('Input is a file:', startPath);            
+        return callback(startPath);
+    }
+
+    // discover files
     var files = fs.readdirSync(startPath);
     for (var i = 0; i < files.length; i++) {
         var filename = path.join(startPath, files[i]);
@@ -33,7 +41,7 @@ module.exports = function fromDir(startPath, filter, callback) {
             // recurs
             fromDir(filename, filter, callback);
         } else if (filter.test(filename)) {
-            logger.debug('Found:', filename);
+            logger.debug('Found:', filename);            
             callback(filename);
         } else {
             logger.debug('Unknow file ext:', filename);

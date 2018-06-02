@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+const fs = require('fs');
 const path = require('path');
 const vntk = require('vntk');
 const discover = require('../discover')
@@ -21,7 +22,8 @@ module.exports = function word_tokenize(files, options) {
         discover(file, options.ext, function (fileName) {
             // reading and process data file
             fs.readFile(fileName, function read(err, data) {
-                var outputFileName = path.join(options.output, fileName, '.ws')
+                var basePath = path.resolve(fileName);
+                var outputFileName = basePath + '.ws';
                 var result = tokenizer.tag(data.toString());
                 fs.writeFile(outputFileName, result, function (err) {
                     if (!err) {
