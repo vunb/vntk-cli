@@ -4,9 +4,9 @@
 const _ = require('lodash')
 const chalk = require('chalk')
 const program = require('commander')
+const version = require('../package').version
 const tokenizer = require('../src/vntk/tokenizer')
 const wordTokenizer = require('../src/vntk/tokenizer/word_tokenizer')
-const version = require('../package').version
 
 var NOOP = function () {};
 var help = function () {
