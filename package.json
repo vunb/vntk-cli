@@ -1,0 +1,27 @@
+{
+  "name": "@vntk/cli",
+  "version": "1.0.0",
+  "description": "Cli for VNTK - A vietnamese NLP Toolkit for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vntk/vntk-cli.git"
+  },
+  "keywords": [
+    "vntk",
+    "vietnamese-nlp",
+    "natural-languague-processing"
+  ],
+  "author": "vunb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vntk/vntk-cli/issues"
+  },
+  "homepage": "https://github.com/vntk/vntk-cli#readme",
+  "dependencies": {
+    "vntk": "^1.3.0"
+  }
+}
