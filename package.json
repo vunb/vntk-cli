@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/vntk/vntk-cli#readme",
   "dependencies": {
-    "vntk": "^1.3.0"
+    "vntk": "^1.4.1"
   }
 }
